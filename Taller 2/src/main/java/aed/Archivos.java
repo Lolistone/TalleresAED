@@ -2,8 +2,6 @@ package aed;
 
 import java.util.Scanner;
 
-import scala.Array;
-
 import java.io.PrintStream;
 
 class Archivos {
