@@ -37,7 +37,7 @@ class Cobertura {
             } else {
                 consecutivos = 1;
             }
-            res = Math.max(res, consecutivos);
+            res = Math.max(res, consecutivos); // Cuando |xs|=1 esta linea no se ejecuta y res = 0 
         }
 
         return res;
