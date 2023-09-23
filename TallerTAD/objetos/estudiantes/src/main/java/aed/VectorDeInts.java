@@ -59,8 +59,8 @@ public class VectorDeInts implements SecuenciaDeInts {
     public VectorDeInts copiar() {
         VectorDeInts copiaVector = new VectorDeInts();
         for (int i = 0; i < _longitud; i++) {
-            copiaVector.agregarAtras(obtener(i)); // Es lento, crea un array c/ vez que agrega un elemento. Se solucionaria con un agregar n elem.                                                
-        }
+            copiaVector.agregarAtras(obtener(i)); // Es lento, crea un array c/ vez que agrega un elemento. 
+        }                                         // Se solucionaria creando un array ya del tamaño correcto y asignandole ahi los valores.                                                
         return copiaVector;
     }
 
