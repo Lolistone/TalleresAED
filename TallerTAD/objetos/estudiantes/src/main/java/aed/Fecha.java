@@ -32,7 +32,8 @@ public class Fecha {
         return sBuffer.toString();
     }
 
-    @Override
+    @Override // Sobreescribo pues el método equals ya está definido.
+
     public boolean equals(Object otra) {
 
         // equals puede recibir cualquier objeto.
