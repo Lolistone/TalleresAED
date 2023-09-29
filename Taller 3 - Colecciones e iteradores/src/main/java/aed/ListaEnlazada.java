@@ -132,20 +132,13 @@ public class ListaEnlazada<T> implements Secuencia<T> {
     
     @Override
     public String toString() {
-        StringBuffer sb = new StringBuffer();
 
-        sb.append("[");
+        Vector<T> elem = new Vector<T>(size);
         for (int i = 0; i < size; i++) {
-            if (i == size - 1) {
-                sb.append(this.obtener(i));
-            }
-            else {
-                sb.append(this.obtener(i)+ ", ");
-            }
+            elem.add(i, obtener(i));
         }
-        sb.append("]");
 
-        return sb.toString();
+        return elem.toString();
     }
 
     private class ListaIterador implements Iterador<T> {
