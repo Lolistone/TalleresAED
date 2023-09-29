@@ -19,7 +19,8 @@ public class Recordatorio {
     }
 
     public Fecha fecha() {
-        return _fecha;
+        Fecha _copia = new Fecha(_fecha);
+        return _copia;
     }
 
     public String mensaje() {

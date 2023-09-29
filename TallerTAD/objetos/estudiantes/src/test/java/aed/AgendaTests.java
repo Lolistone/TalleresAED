@@ -125,7 +125,7 @@ public class AgendaTests {
         f.incrementarDia();
         Fecha f2 = recordatorio.fecha();
         f2.incrementarDia();
-        assertEquals(new Fecha(11, 6), recordatorio.fecha());
+        assertEquals(new Fecha(10, 6), recordatorio.fecha());
 
     }
 

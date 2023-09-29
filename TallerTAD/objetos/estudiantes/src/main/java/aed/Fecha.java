@@ -11,7 +11,8 @@ public class Fecha {
     }
 
     public Fecha(Fecha fecha) {
-        throw new UnsupportedOperationException("No implementada aun");
+        _dia = fecha.dia();
+        _mes = fecha.mes();
     }
 
     public Integer dia() {
