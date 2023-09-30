@@ -86,18 +86,18 @@ public class ListaEnlazada<T> implements Secuencia<T> {
 
         else {
 
-            Nodo previo = fst;
-            for (int j = 1; j < i; j++) {
-                previo = previo.pxmo;
+            Nodo actual = fst;
+            for (int j = 0; j < i; j++) {
+                actual = actual.pxmo;
             }
-            previo.pxmo = previo.pxmo.pxmo;
+            actual.prev.pxmo = actual.pxmo;
 
             // Si estoy en la ultima posición, previo.pxmo es null.
-            if (previo.pxmo != null) {
-                previo.pxmo.pxmo = previo;
+            if (actual.pxmo != null) {
+                actual.pxmo.prev = actual.prev;
             }
             else {
-                lst = previo;
+                lst = actual.prev;
             }
         }
         size--;
