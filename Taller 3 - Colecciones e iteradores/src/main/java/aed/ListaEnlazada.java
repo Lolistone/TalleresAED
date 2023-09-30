@@ -79,6 +79,9 @@ public class ListaEnlazada<T> implements Secuencia<T> {
             if (fst != null) {
                 fst.prev = null;
             }
+            else {
+                lst = null;
+            }
         }
 
         else {
@@ -92,6 +95,9 @@ public class ListaEnlazada<T> implements Secuencia<T> {
             // Si estoy en la ultima posición, previo.pxmo es null.
             if (previo.pxmo != null) {
                 previo.pxmo.pxmo = previo;
+            }
+            else {
+                lst = previo;
             }
         }
         size--;
