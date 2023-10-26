@@ -213,27 +213,29 @@ public class ABB<T extends Comparable<T>> implements Conjunto<T> {
         return pred._valor;
     }
 
-    public String toString(){
-        Nodo actual = _raiz;
-        ArrayList<T> elem = inorder(actual);
 
-        StringBuffer sb = new StringBuffer();
-        sb.append("{");
-        for(int i = 0; i < elem.size()-1; i++) {
-            sb.append(elem.get(i) + ",");
-        }
-        sb.append(elem.get(_cardinal-1) + "}");
+    // Version más eficiente del ToString usando StringBuffer y recursión. 
+    public String toString(){
+        StringBuffer sb = new StringBuffer("{");
+        sb.append(inorder(_raiz));
+        sb.append("}");
         return sb.toString();
     }
 
-    private ArrayList<T> inorder(Nodo actual) {
-        ArrayList<T> elem = new ArrayList<T>(_cardinal);
+    public StringBuffer inorder(Nodo actual) {
+        StringBuffer sb = new StringBuffer("");
         if (actual != null) {
-            elem.addAll(inorder(actual._izq));
-            elem.add(actual._valor);
-            elem.addAll(inorder(actual._der));
+            sb.append(inorder(actual._izq));
+            if (actual._izq != null) {
+                sb.append(",");                        
+            }
+            sb.append(actual._valor);
+            if (actual._der != null) {
+                sb.append(",");
+            }
+            sb.append(inorder(actual._der));
         }
-        return elem;
+        return sb;  
     }
 
     private class ABB_Iterador implements Iterador<T> {
