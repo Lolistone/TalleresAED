@@ -102,7 +102,6 @@ public class ABB<T extends Comparable<T>> implements Conjunto<T> {
         if (_raiz == null) {
             return false;
         }
-
         else {
             Nodo desde = _raiz;
             if (elem.compareTo(desde._valor) == 0) {
@@ -164,9 +163,10 @@ public class ABB<T extends Comparable<T>> implements Conjunto<T> {
         else if (desde._valor.compareTo(elem) > 0) {
             return buscarNodo(desde._izq, elem);
         }
-        else {
+        else if (desde._valor.compareTo(elem) < 0){
             return buscarNodo(desde._der, elem);
         }
+            return null;
     }
 
     private void reemplazar(Nodo nodo, Nodo reemp) {
